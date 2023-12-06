@@ -7,7 +7,7 @@
 #include "JozUserWidget.generated.h"
 
 /**
- * 
+ * Base class for all widgets that are used with a WidgetController.
  */
 UCLASS()
 class ABILITYHELPER_API UJozUserWidget : public UUserWidget

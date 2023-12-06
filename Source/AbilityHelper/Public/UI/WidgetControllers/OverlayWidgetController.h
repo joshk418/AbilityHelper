@@ -12,7 +12,7 @@ DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FOnHealthChangedSignature, float, Ne
 DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FOnMaxHealthChangedSignature, float, NewMaxHealth);
 
 /**
- * 
+ * OverlayWidgetController is used by the OverlayWidget to access and display data from the Player.
  */
 UCLASS(BlueprintType, Blueprintable)
 class ABILITYHELPER_API UOverlayWidgetController : public UJozWidgetController

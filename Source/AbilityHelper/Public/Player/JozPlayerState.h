@@ -11,7 +11,8 @@ class UAttributeSet;
 class UAbilitySystemComponent;
 
 /**
- * 
+ * PlayerState that implements the IAbilitySystemInterface to give flexibility to the Player
+ * to retain ability system information.
  */
 UCLASS()
 class ABILITYHELPER_API AJozPlayerState : public APlayerState, public IAbilitySystemInterface
