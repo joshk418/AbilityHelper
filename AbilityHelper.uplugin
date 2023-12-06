@@ -1,0 +1,30 @@
+{
+	"FileVersion": 3,
+	"Version": 0,
+	"VersionName": "0.1",
+	"FriendlyName": "GameplayAbility Helper",
+	"Description": "A C++ library intended to help reduce creation time in setting up new GameplayAbility projects.",
+	"Category": "Other",
+	"CreatedBy": "Josh Kyte",
+	"CreatedByURL": "",
+	"DocsURL": "",
+	"MarketplaceURL": "",
+	"SupportURL": "",
+	"CanContainContent": false,
+	"IsBetaVersion": true,
+	"IsExperimentalVersion": true,
+	"Installed": true,
+	"Modules": [
+		{
+			"Name": "AbilityHelper",
+			"Type": "Runtime",
+			"LoadingPhase": "Default"
+		}
+	],
+	"Plugins": [
+		{
+			"Name": "GameplayAbilities",
+			"Enabled": true
+		}
+	]
+}
