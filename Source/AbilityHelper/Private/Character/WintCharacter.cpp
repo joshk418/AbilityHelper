@@ -1,14 +1,14 @@
 ﻿// Fill out your copyright notice in the Description page of Project Settings.
 
 
-#include "Characters\JozCharacter.h"
+#include "Character\WintCharacter.h"
 
-AJozCharacter::AJozCharacter()
+AWintCharacter::AWintCharacter()
 {
 
 }
 
-void AJozCharacter::BeginPlay()
+void AWintCharacter::BeginPlay()
 {
 	Super::BeginPlay();
 }

@@ -5,7 +5,7 @@
 #include "CoreMinimal.h"
 #include "AbilitySystemInterface.h"
 #include "GameFramework/PlayerState.h"
-#include "JozPlayerState.generated.h"
+#include "WintPlayerState.generated.h"
 
 class UAttributeSet;
 class UAbilitySystemComponent;
@@ -15,7 +15,7 @@ class UAbilitySystemComponent;
  * to retain ability system information.
  */
 UCLASS()
-class ABILITYHELPER_API AJozPlayerState : public APlayerState, public IAbilitySystemInterface
+class ABILITYHELPER_API AWintPlayerState : public APlayerState, public IAbilitySystemInterface
 {
 	GENERATED_BODY()
 
@@ -26,14 +26,14 @@ class ABILITYHELPER_API AJozPlayerState : public APlayerState, public IAbilitySy
 	TObjectPtr<UAttributeSet> AttributeSet;
 
 public:
-	AJozPlayerState();
+	AWintPlayerState();
 
-	virtual UAbilitySystemComponent* GetAbilitySystemComponent() const override
+	virtual UAbilitySystemComponent *GetAbilitySystemComponent() const override
 	{
-		return AbilitySystemComponent;	
+		return AbilitySystemComponent;
 	};
-	
-	UAttributeSet* GetAttributeSet() const
+
+	UAttributeSet *GetAttributeSet() const
 	{
 		return AttributeSet;
 	};

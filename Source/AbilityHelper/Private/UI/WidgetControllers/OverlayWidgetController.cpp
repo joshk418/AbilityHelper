@@ -3,7 +3,7 @@
 
 #include "UI/WidgetControllers/OverlayWidgetController.h"
 
-#include "AbilitySystem/JozAttributeSet.h"
+#include "AbilitySystem\WintAttributeSet.h"
 
 void UOverlayWidgetController::HealthChanged(const FOnAttributeChangeData& Data) const
 {
@@ -17,7 +17,7 @@ void UOverlayWidgetController::MaxHealthChanged(const FOnAttributeChangeData& Da
 
 void UOverlayWidgetController::BroadcastInitialValues()
 {
-	const UJozAttributeSet* AshAttributeSet = CastChecked<UJozAttributeSet>(AttributeSet);
+	const UWintAttributeSet* AshAttributeSet = CastChecked<UWintAttributeSet>(AttributeSet);
 
 	OnHealthChanged.Broadcast(AshAttributeSet->GetHealth());
 	OnMaxHealthChanged.Broadcast(AshAttributeSet->GetMaxHealth());
@@ -25,7 +25,7 @@ void UOverlayWidgetController::BroadcastInitialValues()
 
 void UOverlayWidgetController::BindCallbacksToDependencies()
 {
-	const UJozAttributeSet* AshAttributeSet = CastChecked<UJozAttributeSet>(AttributeSet);
+	const UWintAttributeSet* AshAttributeSet = CastChecked<UWintAttributeSet>(AttributeSet);
 
 	AbilitySystemComponent->GetGameplayAttributeValueChangeDelegate(
 		AshAttributeSet->GetHealthAttribute()).AddUObject(this, &UOverlayWidgetController::HealthChanged);

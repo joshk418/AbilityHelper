@@ -5,7 +5,7 @@
 #include "CoreMinimal.h"
 #include "GameFramework/Character.h"
 #include "AbilitySystemInterface.h"
-#include "JozCharacter.generated.h"
+#include "WintCharacter.generated.h"
 
 class UAttributeSet;
 class UAbilitySystemComponent;
@@ -16,11 +16,10 @@ class UAbilitySystemComponent;
  * AJKPlayerState is recommended to be used for the player's ability system component and attribute set.
  */
 UCLASS()
-class ABILITYHELPER_API AJozCharacter : public ACharacter, public IAbilitySystemInterface
+class ABILITYHELPER_API AWintCharacter : public ACharacter, public IAbilitySystemInterface
 {
 	GENERATED_BODY()
 
-	
 protected:
 	UPROPERTY()
 	TObjectPtr<UAbilitySystemComponent> AbilitySystemComponent;
@@ -31,16 +30,15 @@ protected:
 	virtual void BeginPlay() override;
 
 public:
-	AJozCharacter();
-	
-	virtual UAbilitySystemComponent* GetAbilitySystemComponent() const override
+	AWintCharacter();
+
+	virtual UAbilitySystemComponent *GetAbilitySystemComponent() const override
 	{
-		return AbilitySystemComponent;	
+		return AbilitySystemComponent;
 	};
-	
-	UAttributeSet* GetAttributeSet() const
+
+	UAttributeSet *GetAttributeSet() const
 	{
 		return AttributeSet;
 	};
-
 };

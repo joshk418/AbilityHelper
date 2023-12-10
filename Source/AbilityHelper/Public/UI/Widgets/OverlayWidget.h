@@ -3,14 +3,14 @@
 #pragma once
 
 #include "CoreMinimal.h"
-#include "JozUserWidget.h"
+#include "WintUserWidget.h"
 #include "OverlayWidget.generated.h"
 
 /**
  * Simple widget that is used to display the overlay on the HUD.
  */
 UCLASS()
-class ABILITYHELPER_API UOverlayWidget : public UJozUserWidget
+class ABILITYHELPER_API UOverlayWidget : public UWintUserWidget
 {
 	GENERATED_BODY()
 };

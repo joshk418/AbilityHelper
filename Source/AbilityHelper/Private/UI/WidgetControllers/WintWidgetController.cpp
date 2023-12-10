@@ -1,9 +1,9 @@
 ﻿// Fill out your copyright notice in the Description page of Project Settings.
 
 
-#include "UI/WidgetControllers/JozWidgetController.h"
+#include "UI/WidgetControllers\WintWidgetController.h"
 
-void UJozWidgetController::SetWidgetControllerParams(const FWidgetControllerParams& Params)
+void UWintWidgetController::SetWidgetControllerParams(const FWidgetControllerParams& Params)
 {
 	PlayerController = Params.PlayerController;
 	PlayerState = Params.PlayerState;
@@ -11,10 +11,10 @@ void UJozWidgetController::SetWidgetControllerParams(const FWidgetControllerPara
 	AttributeSet = Params.AttributeSet;
 }
 
-void UJozWidgetController::BroadcastInitialValues()
+void UWintWidgetController::BroadcastInitialValues()
 {
 }
 
-void UJozWidgetController::BindCallbacksToDependencies()
+void UWintWidgetController::BindCallbacksToDependencies()
 {
 }

@@ -4,13 +4,13 @@
 
 #include "CoreMinimal.h"
 #include "Blueprint/UserWidget.h"
-#include "JozUserWidget.generated.h"
+#include "WintUserWidget.generated.h"
 
 /**
  * Base class for all widgets that are used with a WidgetController.
  */
 UCLASS()
-class ABILITYHELPER_API UJozUserWidget : public UUserWidget
+class ABILITYHELPER_API UWintUserWidget : public UUserWidget
 {
 	GENERATED_BODY()
 
@@ -25,5 +25,5 @@ protected:
 
 public:
 	UFUNCTION(BlueprintCallable)
-	void SetWidgetController(UObject* InWidgetController);
+	void SetWidgetController(UObject *InWidgetController);
 };

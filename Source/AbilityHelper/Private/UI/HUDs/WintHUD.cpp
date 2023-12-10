@@ -1,18 +1,17 @@
 ﻿// Fill out your copyright notice in the Description page of Project Settings.
 
-
-#include "UI/HUDs/JozHUD.h"
+#include "UI/HUDs\WintHUD.h"
 
 #include "Blueprint/UserWidget.h"
 #include "UI/WidgetControllers/OverlayWidgetController.h"
-#include "UI/Widgets/JozUserWidget.h"
+#include "UI/Widgets\WintUserWidget.h"
 
-void AJozHUD::BeginPlay()
+void AWintHUD::BeginPlay()
 {
 	Super::BeginPlay();
 }
 
-UOverlayWidgetController* AJozHUD::GetOverlayWidgetController(const FWidgetControllerParams& Params)
+UOverlayWidgetController *AWintHUD::GetOverlayWidgetController(const FWidgetControllerParams &Params)
 {
 	if (!OverlayWidgetController)
 	{
@@ -24,16 +23,16 @@ UOverlayWidgetController* AJozHUD::GetOverlayWidgetController(const FWidgetContr
 	return OverlayWidgetController;
 }
 
-void AJozHUD::InitOverlay(APlayerController* PC, APlayerState* PS, UAbilitySystemComponent* ASC, UAttributeSet* AS)
+void AWintHUD::InitOverlay(APlayerController *PC, APlayerState *PS, UAbilitySystemComponent *ASC, UAttributeSet *AS)
 {
 	checkf(OverlayWidgetClass, TEXT("OverlayWidgetClass is null"));
 	checkf(OverlayWidgetControllerClass, TEXT("OverlayWidgetControllerClass is null"));
 
-	UJozUserWidget* Widget = CreateWidget<UJozUserWidget>(PC, OverlayWidgetClass);
+	UWintUserWidget *Widget = CreateWidget<UWintUserWidget>(PC, OverlayWidgetClass);
 	OverlayWidget = Widget;
 
 	const FWidgetControllerParams WidgetControllerParams = FWidgetControllerParams(PC, PS, ASC, AS);
-	UOverlayWidgetController* WidgetController = GetOverlayWidgetController(WidgetControllerParams);
+	UOverlayWidgetController *WidgetController = GetOverlayWidgetController(WidgetControllerParams);
 
 	OverlayWidget->SetWidgetController(WidgetController);
 	WidgetController->BroadcastInitialValues();

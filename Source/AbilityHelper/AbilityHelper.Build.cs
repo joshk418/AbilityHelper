@@ -31,8 +31,7 @@ public class AbilityHelper : ModuleRules
 				"UMG",
 				"GameplayTags",
 				"GameplayTasks",
-				"GameplayAbilities",
-				// ... add other public dependencies that you statically link with here ...
+				"GameplayAbilities"
 			}
 		);
 			
@@ -43,8 +42,7 @@ public class AbilityHelper : ModuleRules
 				"CoreUObject",
 				"Engine",
 				"Slate",
-				"SlateCore",
-				// ... add private dependencies that you statically link with here ...	
+				"SlateCore"	
 			}
 		);
 		

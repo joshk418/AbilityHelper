@@ -4,7 +4,7 @@
 
 #include "CoreMinimal.h"
 #include "UObject/Object.h"
-#include "JozWidgetController.generated.h"
+#include "WintWidgetController.generated.h"
 
 class UAttributeSet;
 class UAbilitySystemComponent;
@@ -19,7 +19,7 @@ struct FWidgetControllerParams
 	{
 	}
 
-	FWidgetControllerParams(APlayerController* InPlayerController, APlayerState* InPlayerState, UAbilitySystemComponent* InAbilitySystemComponent, UAttributeSet* InAttributeSet)
+	FWidgetControllerParams(APlayerController *InPlayerController, APlayerState *InPlayerState, UAbilitySystemComponent *InAbilitySystemComponent, UAttributeSet *InAttributeSet)
 	{
 		PlayerController = InPlayerController;
 		PlayerState = InPlayerState;
@@ -44,25 +44,25 @@ struct FWidgetControllerParams
  * WidgetController base class to act as a bridge between the UI and the Player.
  */
 UCLASS()
-class ABILITYHELPER_API UJozWidgetController : public UObject
+class ABILITYHELPER_API UWintWidgetController : public UObject
 {
 	GENERATED_BODY()
 
 protected:
-	UPROPERTY(BlueprintReadOnly, Category="WidgetController|Player")
+	UPROPERTY(BlueprintReadOnly, Category = "WidgetController|Player")
 	TObjectPtr<APlayerController> PlayerController;
 
-	UPROPERTY(BlueprintReadOnly, Category="WidgetController|Player")
+	UPROPERTY(BlueprintReadOnly, Category = "WidgetController|Player")
 	TObjectPtr<APlayerState> PlayerState;
 
-	UPROPERTY(BlueprintReadOnly, Category="WidgetController|AbilitySystem")
+	UPROPERTY(BlueprintReadOnly, Category = "WidgetController|AbilitySystem")
 	TObjectPtr<UAbilitySystemComponent> AbilitySystemComponent;
 
-	UPROPERTY(BlueprintReadOnly, Category="WidgetController|AbilitySystem")
+	UPROPERTY(BlueprintReadOnly, Category = "WidgetController|AbilitySystem")
 	TObjectPtr<UAttributeSet> AttributeSet;
 
 public:
-	void SetWidgetControllerParams(const FWidgetControllerParams& Params);
+	void SetWidgetControllerParams(const FWidgetControllerParams &Params);
 
 	virtual void BroadcastInitialValues();
 	virtual void BindCallbacksToDependencies();

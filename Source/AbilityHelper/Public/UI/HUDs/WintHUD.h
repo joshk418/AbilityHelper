@@ -4,24 +4,24 @@
 
 #include "CoreMinimal.h"
 #include "GameFramework/HUD.h"
-#include "JozHUD.generated.h"
+#include "WintHUD.generated.h"
 
-class UJozUserWidget;
+class UWintUserWidget;
 struct FWidgetControllerParams;
 class UOverlayWidgetController;
 class UAbilitySystemComponent;
 class UAttributeSet;
 
 /**
- * 
+ *
  */
 UCLASS()
-class ABILITYHELPER_API AJozHUD : public AHUD
+class ABILITYHELPER_API AWintHUD : public AHUD
 {
 	GENERATED_BODY()
 
 	UPROPERTY(EditAnywhere)
-	TSubclassOf<UJozUserWidget> OverlayWidgetClass;
+	TSubclassOf<UWintUserWidget> OverlayWidgetClass;
 
 	UPROPERTY()
 	TObjectPtr<UOverlayWidgetController> OverlayWidgetController;
@@ -30,13 +30,13 @@ class ABILITYHELPER_API AJozHUD : public AHUD
 	TSubclassOf<UOverlayWidgetController> OverlayWidgetControllerClass;
 
 public:
-	TObjectPtr<UJozUserWidget> OverlayWidget;
+	TObjectPtr<UWintUserWidget> OverlayWidget;
 
 protected:
 	virtual void BeginPlay() override;
 
 public:
-	UOverlayWidgetController* GetOverlayWidgetController(const FWidgetControllerParams& Params);
+	UOverlayWidgetController *GetOverlayWidgetController(const FWidgetControllerParams &Params);
 
-	void InitOverlay(APlayerController* PC, APlayerState* PS, UAbilitySystemComponent* ASC, UAttributeSet* AS);
+	void InitOverlay(APlayerController *PC, APlayerState *PS, UAbilitySystemComponent *ASC, UAttributeSet *AS);
 };
