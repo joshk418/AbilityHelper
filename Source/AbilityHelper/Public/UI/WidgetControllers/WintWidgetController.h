@@ -19,7 +19,7 @@ struct FWidgetControllerParams
 	{
 	}
 
-	FWidgetControllerParams(APlayerController *InPlayerController, APlayerState *InPlayerState, UAbilitySystemComponent *InAbilitySystemComponent, UAttributeSet *InAttributeSet)
+	FWidgetControllerParams(APlayerController *InPlayerController, APlayerState *InPlayerState, UAbilitySystemComponent *InAbilitySystemComponent, const UAttributeSet *InAttributeSet)
 	{
 		PlayerController = InPlayerController;
 		PlayerState = InPlayerState;
@@ -37,7 +37,7 @@ struct FWidgetControllerParams
 	TObjectPtr<UAbilitySystemComponent> AbilitySystemComponent = nullptr;
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite)
-	TObjectPtr<UAttributeSet> AttributeSet = nullptr;
+	TObjectPtr<const UAttributeSet> AttributeSet = nullptr;
 };
 
 /**
@@ -59,7 +59,7 @@ protected:
 	TObjectPtr<UAbilitySystemComponent> AbilitySystemComponent;
 
 	UPROPERTY(BlueprintReadOnly, Category = "WidgetController|AbilitySystem")
-	TObjectPtr<UAttributeSet> AttributeSet;
+	TObjectPtr<const UAttributeSet> AttributeSet;
 
 public:
 	void SetWidgetControllerParams(const FWidgetControllerParams &Params);

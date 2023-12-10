@@ -7,6 +7,7 @@
 #include "GameFramework/PlayerState.h"
 #include "WintPlayerState.generated.h"
 
+class UWintPawnData;
 class UAttributeSet;
 class UAbilitySystemComponent;
 
@@ -22,19 +23,33 @@ class ABILITYHELPER_API AWintPlayerState : public APlayerState, public IAbilityS
 	UPROPERTY()
 	TObjectPtr<UAbilitySystemComponent> AbilitySystemComponent;
 
-	UPROPERTY()
-	TObjectPtr<UAttributeSet> AttributeSet;
+	UPROPERTY(EditDefaultsOnly, ReplicatedUsing=OnRep_PawnData)
+	TObjectPtr<const UWintPawnData> PawnData;
+
+protected:
+	UFUNCTION()
+	void OnRep_PawnData();
 
 public:
 	AWintPlayerState();
+
+protected:
+	virtual void BeginPlay() override;
+
+public:
+	virtual void GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const override;
 
 	virtual UAbilitySystemComponent *GetAbilitySystemComponent() const override
 	{
 		return AbilitySystemComponent;
 	};
 
-	UAttributeSet *GetAttributeSet() const
+	template<class T>
+	const T* GetPawnData() const
 	{
-		return AttributeSet;
-	};
+		return Cast<T>(PawnData);
+	}
+
+	void InitPawnData();
+	void SetPawnData(const UWintPawnData* InPawnData);
 };

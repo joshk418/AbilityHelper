@@ -23,7 +23,7 @@ UOverlayWidgetController *AWintHUD::GetOverlayWidgetController(const FWidgetCont
 	return OverlayWidgetController;
 }
 
-void AWintHUD::InitOverlay(APlayerController *PC, APlayerState *PS, UAbilitySystemComponent *ASC, UAttributeSet *AS)
+void AWintHUD::InitOverlay(APlayerController *PC, APlayerState *PS, UAbilitySystemComponent *ASC, const UAttributeSet *AS)
 {
 	checkf(OverlayWidgetClass, TEXT("OverlayWidgetClass is null"));
 	checkf(OverlayWidgetControllerClass, TEXT("OverlayWidgetControllerClass is null"));

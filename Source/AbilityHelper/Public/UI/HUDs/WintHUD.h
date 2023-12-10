@@ -13,7 +13,7 @@ class UAbilitySystemComponent;
 class UAttributeSet;
 
 /**
- *
+ * HUD base class for displaying overlay;
  */
 UCLASS()
 class ABILITYHELPER_API AWintHUD : public AHUD
@@ -38,5 +38,5 @@ protected:
 public:
 	UOverlayWidgetController *GetOverlayWidgetController(const FWidgetControllerParams &Params);
 
-	void InitOverlay(APlayerController *PC, APlayerState *PS, UAbilitySystemComponent *ASC, UAttributeSet *AS);
+	void InitOverlay(APlayerController *PC, APlayerState *PS, UAbilitySystemComponent *ASC, const UAttributeSet *AS);
 };

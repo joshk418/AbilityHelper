@@ -31,7 +31,8 @@ public class AbilityHelper : ModuleRules
 				"UMG",
 				"GameplayTags",
 				"GameplayTasks",
-				"GameplayAbilities"
+				"GameplayAbilities",
+				"EnhancedInput"
 			}
 		);
 			
