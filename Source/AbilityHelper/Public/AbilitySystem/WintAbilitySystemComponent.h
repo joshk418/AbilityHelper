@@ -18,4 +18,6 @@ class ABILITYHELPER_API UWintAbilitySystemComponent : public UAbilitySystemCompo
 public:	
 	void AbilityInputHeld(const FGameplayTag& InputTag);
 	void AbilityInputReleased(const FGameplayTag& InputTag);
+
+	void CancelAllActiveAbilities();
 };

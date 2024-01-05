@@ -39,3 +39,18 @@ void UWintAbilitySystemComponent::AbilityInputReleased(const FGameplayTag& Input
 		}
 	}
 }
+
+void UWintAbilitySystemComponent::CancelAllActiveAbilities()
+{
+	const FGameplayAbilityActorInfo* Info = AbilityActorInfo.Get();
+	for (const FGameplayAbilitySpec Ability : GetActivatableAbilities())
+	{
+		if (Ability.IsActive())
+		{
+			for (UGameplayAbility* Instance : Ability.GetAbilityInstances())
+			{
+				Instance->CancelAbility(Ability.Handle, Info, Ability.ActivationInfo, true);
+			}
+		}
+	}
+}
