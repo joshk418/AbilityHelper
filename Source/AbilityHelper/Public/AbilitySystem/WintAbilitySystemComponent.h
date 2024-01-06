@@ -15,7 +15,7 @@ class ABILITYHELPER_API UWintAbilitySystemComponent : public UAbilitySystemCompo
 {
 	GENERATED_BODY()
 
-public:	
+public:
 	void AbilityInputHeld(const FGameplayTag& InputTag);
 	void AbilityInputReleased(const FGameplayTag& InputTag);
 

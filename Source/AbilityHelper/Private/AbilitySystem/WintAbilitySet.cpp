@@ -5,8 +5,20 @@
 #include "AbilitySystemComponent.h"
 
 void UWintAbilitySet::GiveAbilities(UAbilitySystemComponent* AbilitySystemComponent) const
-{	
+{
+	
 	if (!IsValid(AbilitySystemComponent))
+	{
+		return;
+	}
+
+	const AActor* Owner = AbilitySystemComponent->GetOwnerActor();
+	if (!Owner)
+	{
+		return;
+	}
+
+	if (Owner->GetLocalRole() < ROLE_Authority)
 	{
 		return;
 	}
